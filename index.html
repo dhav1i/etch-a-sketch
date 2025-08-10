@@ -4,9 +4,23 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Itch</title>
+    <link rel="stylesheet" href="style.css">
   </head>
   <body>
-    <div class="container"></div>
+    <div class="upper-container">
+        <h1>Etch-a-Sketch</h1>
+        <div class="btns">
+            <button class="modern btn">Modern</button>
+            <button class="classic btn">Classic</button>
+            <button class="erase btn">Erase</button>
+        </div>
+        <div class="container"></div>
+        <div class="range-container">
+            <h3>Grid Size: </h3>
+            <input type="range" name="grids-slider" id="grids-slider" class="grids-slider" min="1" max="100" value="16">
+            <span class="range-value"></span>
+        </div>
+    </div>
     <script src="script.js"></script>
   </body>
 </html>
