@@ -10,7 +10,12 @@ const squares = document.querySelectorAll('.square');
 rangeValue.textContent = slider.value;
 
 slider.oninput = function() {
-    rangeValue.textContent = this.value;
+  rangeValue.textContent = this.value;
+   let squares = document.querySelectorAll('.square')
+   squares.forEach((square)  => {
+       square.remove()
+   } )
+    createGrid(slider.value)
 };
 
 let currentMode = "classic";
@@ -22,6 +27,7 @@ function createGrid(num) {
         const square = document.createElement('div')
         square.classList.add('square');
         containerElement.appendChild(square);
+        
         let opacity = 0;
         
         square.addEventListener('mouseenter', () => {
@@ -47,5 +53,4 @@ function createGrid(num) {
 modernBtn.addEventListener('click', () => {currentMode = "modern"});
 classicBtn.addEventListener('click', () => {currentMode = "classic"});
 
-window.onload = createGrid(16);
-
+window.onload = createGrid(16)
