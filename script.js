@@ -4,18 +4,17 @@ const rangeValue = document.querySelector('.range-value');
 const classicBtn = document.querySelector('.classic');
 const modernBtn = document.querySelector('.modern');
 const eraseBtn = document.querySelector('.erase');
-const squares = document.querySelectorAll('.square');
 
 
 rangeValue.textContent = slider.value;
 
-slider.oninput = function() {
-  rangeValue.textContent = this.value;
-   let squares = document.querySelectorAll('.square')
-   squares.forEach((square)  => {
-       square.remove()
-   } )
-    createGrid(slider.value)
+slider.onmouseup = function() {
+   const squares = document.querySelectorAll('.square');
+   rangeValue.textContent = this.value;
+    for(let square of squares) {
+        square.remove()
+    }
+    createGrid(slider.value);
 };
 
 let currentMode = "classic";
